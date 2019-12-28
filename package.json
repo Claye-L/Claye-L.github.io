@@ -1,7 +1,10 @@
 {
+  "homepage": "http://yuribenjamin.github.io/my-app",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
@@ -10,5 +13,8 @@
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.8.0"
+  },
+  "devDependencies": {
+    "gh-pages" : "^2.1.1"
   }
 }
