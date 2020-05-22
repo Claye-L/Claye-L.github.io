@@ -28,33 +28,14 @@ let update (msg:Msg) (model:Model) =
     | Decrement -> model - 1
 
 // VIEW (rendered with React)
-
-let gameBoard (model:Model) dispatch =
-    div [Style [Display DisplayOptions.Grid]] 
-      [
-        yield! [0..21] 
-        |> Seq.map (fun i -> 
-          div [Style 
-              [
-                GridColumn (i %  6 + 1); 
-                GridRow (i / 6 + 1); 
-                Border "2px"; 
-                Margin "2px"; 
-                BackgroundColor "red"
-              ]
-            ] 
-            [p [] [str "+"]])
-      ]
-
 let view (model:Model) dispatch =
 
   div [Style [Display DisplayOptions.Grid]] [
     // //increment button owo
-    // div []
-    //   [ button [ OnClick (fun _ -> dispatch Increment) ] [ str "+" ]
-    //     div [] [ str (string model) ]
-    //     button [ OnClick (fun _ -> dispatch Decrement) ] [ str "-" ] ] ;
-      gameBoard model dispatch
+    div []
+      [ button [ OnClick (fun _ -> dispatch Increment) ] [ str "+" ]
+        div [] [ str (string model) ]
+        button [ OnClick (fun _ -> dispatch Decrement) ] [ str "-" ] ] ;
   ]
  
 
