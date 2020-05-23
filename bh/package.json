@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server",
+    "build": "npx webpack",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -11,6 +12,7 @@
     "fable-loader": "^2.1.8",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-scripts": "^3.4.1",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
